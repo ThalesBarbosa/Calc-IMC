@@ -14,3 +14,10 @@ function calcular(altura, peso) {
       print("Obesidade");
     }
   }
+
+  function calcularTeste(){
+    var peso = document.getElementById("Peso").innerHTML;
+    var altura = document.getElementById("altura").textContent;
+
+    alert("peso e altura: " + peso +", " + altura);
+}

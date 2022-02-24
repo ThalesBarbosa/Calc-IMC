@@ -1,29 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Calculadora de IMC</title>
-    </head>
-    <body>
-        <div>
-            <form id="formulario">
-                <fieldset>
-                    <legend>Calculo IMC</legend>
-                    
-                    <label for="peso">Peso:</label>
-                    <input name="peso" type="text" />
-                
-                    <label for="altura">altura:</label>
-                    <input name="altura" type="text" />
-                
-                    <label for="imc">imc:</label>
-                    <input name="imc" type="text" disabled="disabled" />
-                        
-                    <a href="#" onclick="calcular();">Calcular</a>
-                </fieldset>
-            </form>
+<html lang="pt-br">
+  <head>
+    <title>Calculadora</title>
+    <link href="index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="data">
+        <div class="form">
+          <h2 id="calculador">Calcule seu IMC</h2>
+          <!-- COMEÇO linha Peso -->
+          <div class="row">
+            <label>
+              Peso :
+              <input
+                name="Peso"
+                id="Peso"
+                placeholder="Peso atual"
+              />
+            </label>
+          </div>
+          <!-- FIM linha Peso -->
+          <!-- COMEÇO linha Altura -->
+          <div class="row">
+            <label for="altura"
+              >Altura :
+              <input
+                name="altura"
+                id="altura"
+                placeholder="Altura em centímetros"
+                type="number"
+              />
+            </label>
+          </div>
+          <!-- FIM linha Altura -->
+          <button onclick="calcularTeste()" type="button" class="action">Calcular</button>
         </div>
-    </body>
+      </div>
+      <!-- COMEÇO TABELA -->
+      <div class="data">
+        <table id="tabela">
+          <tr>
+            <td colspan="2">
+              <div style="text-align: center">
+                <b>Tabela de Referência IMC</b>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td><b>Magreza: </b></td>
+            <td>Resultado menor que 18,5 kg/m2</td>
+          </tr>
+          <tr>
+            <td><b>Normal: </b></td>
+            <td>Resultado entre 18,5 e 24,9 kg/m2</td>
+          </tr>
+          <tr>
+            <td><b>Sobrepeso: </b></td>
+            <td>Resultado ente 24,9 e 30 kg/m2</td>
+          </tr>
+          <tr>
+            <td><b>Obesidade: </b></td>
+            <td>Resultado maior que 30 kg/m2</td>
+          </tr>
+        </table>
+      </div>
+      <!--  FIM TABELA -->
+
+      <hr />
+      <div class="data">
+        <table id="tabelaResultado">
+            <tr>
+              <td><span id = "statusImc"></span></td>
+              <td><span id = "imcValor"></span></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script lang="text/javascript" src="script.js"></script>
 </html>
